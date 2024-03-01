@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:practica1/pages/home_page.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:practica1/pages/login_page.dart';
+import 'package:practica1/pages/onboarding_screen.dart';
 
 // void main() => runApp(const MyApp());
 
@@ -119,7 +121,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return MaterialApp(
       title: 'Little Nightmares Universe',
       theme: ThemeData.dark(),
-      home: const HomePageProtagonists(),
+      home: const LoginPage(),
+      routes: {
+        "/home": (BuildContext context) => HomePageProtagonists(),
+        "/on_boarding": (BuildContext context) => OnBoardingScreen()
+      }, //HomePageProtagonists(),
       debugShowCheckedModeBanner: false,
     );
   }
